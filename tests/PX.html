@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('photos/jpg/birds\ hill\ star\ trails\ 3-1.jpg'); /* Add your background image path here */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .album {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .album img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .album .mini-cube {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .album .hover-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            background-image: url('photos/jpg/birds\ hill\ star\ trails\ 3-1.jpg'); /* Example background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .album:hover .hover-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .album p{
+            width: 80%;
+        }
+
+        .album:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-content h3 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .hover-content p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="photos/logos for photos.png" alt="OUT OF FOCUS logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery-container">
+            <h1>Photo Gallery</h1>
+            <div class="album-grid">
+                <!-- Album 1 -->
+                <a href="album1.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2539-1.jpg" alt="Album 1"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2577-1.jpg" alt="Album 1"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2583-1.jpg" alt="Album 1"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2601-1.jpg" alt="Album 1"></div>
+                    <div class="hover-content">
+                        <h3>Album 1</h3>
+                        <p>This album showcases beautiful landscapes.</p>
+                    </div>
+                </a>
+
+                <!-- Album 2 -->
+                <a href="album2.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4985.jpg" alt="Album 2"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_5005-Enhanced-NR.jpg" alt="Album 2"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_5056-Enhanced-NR.jpg" alt="Album 2"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_5161-Enhanced-NR.jpg" alt="Album 2"></div>
+                    <div class="hover-content">
+                        <h3>Album 2</h3>
+                        <p>This album captures candid moments.</p>
+                    </div>
+                </a>
+
+                <!-- Album 3 -->
+                <a href="album3.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/TATA1403-Enhanced-NR-Edit-1-standard.jpg" alt="Album 3"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/TATA2382-Enhanced-NR-1.jpg" alt="Album 3"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/birds hill star trails 3-1.jpg" alt="Album 3"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2005-Enhanced-NR-Edit-1.jpg" alt="Album 3"></div>
+                    <div class="hover-content">
+                        <h3>Album 3</h3>
+                        <p>This album is all about urban photography.</p>
+                    </div>
+                </a>
+
+                <!-- Album 4 -->
+                <a href="album4.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4341-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4418-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4498-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4332-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="hover-content">
+                        <h3>Album 4</h3>
+                        <p>This album celebrates nature's beauty.</p>
+                    </div>
+                </a>
+
+                <!-- Album 5 -->
+                <a href="album5.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_3956-Enhanced-NR-Edit.jpg" alt="Album 5"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4008-Enhanced-NR-Edit.jpg" alt="Album 5"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4056-Enhanced-NR.jpg" alt="Album 5"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4105-Enhanced-NR-Edit.jpg" alt="Album 5"></div>
+                    <div class="hover-content">
+                        <h3>Album 5</h3>
+                        <p>A tribute to creative perspectives.</p>
+                    </div>
+                </a>
+
+                <!-- Album 6 -->
+                <a href="album6.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4944-Edit.jpg" alt="Album 6"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4854.jpg" alt="Album 6"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4882-Edit-2.jpg" alt="Album 6"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4891.jpg" alt="Album 6"></div>
+                    <div class="hover-content">
+                        <h3>Album 6</h3>
+                        <p>This album highlights stunning portraits.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Photography by Ethan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

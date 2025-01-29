@@ -1,0 +1,231 @@
+<!-- Page Description:
+    This page displays a carousel showcasing images from the "The Leaf at Assiniboine Park" album. It allows users to click on images for a fullscreen view and download option.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Leaf at Assiniboine Park</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Styling for the album page */
+        .album-page {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        /* Title styling */
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            padding-top: 50%; /* Aspect ratio 2:1 */
+            overflow: hidden;
+        }
+
+        /* Carousel image container */
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Image styling for carousel */
+        .carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        /* Carousel button styling */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        /* Left button styling */
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        /* Right button styling */
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        /* Fullscreen Image */
+        .fullscreen {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Fullscreen image styling */
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 80%;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        /* Back button styling for fullscreen view */
+        .back-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* Album description styling */
+        .album-description {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Back button fixed size and styling */
+        .back-button {
+            border-radius: 15px;
+            width: 135.16px;
+            height: 49px;
+            text-align: center;
+            display: inline;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html"><img src="../photos/logos for photos.png" alt="OUT OF FOCUS logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="album-page">
+            <h1>The Leaf at Assiniboine Park</h1>
+            
+            <!-- Carousel displaying images -->
+            <div class="carousel">
+                <div class="carousel-images">
+                    <!-- Image slides with data-fullscreen attribute for full image preview -->
+                    <img src="../photos/jpg.2x1/DZ0_4985.jpg" alt="balcony" data-fullscreen="../photos/jpg/DZ0_4985.jpg">
+                    <img src="../photos/jpg.2x1/DZ0_5005-Enhanced-NR.jpg" alt="red lollipop" data-fullscreen="../photos/jpg/DZ0_5005-Enhanced-NR.jpg">
+                    <img src="../photos/jpg.2x1/DZ0_5037.jpg" alt="the 3 fishes" data-fullscreen="../photos/jpg/DZ0_5037.jpg">
+                    <img src="../photos/jpg.2x1/DZ0_5056-Enhanced-NR.jpg" alt="flower lamp" data-fullscreen="../photos/jpg/DZ0_5056-Enhanced-NR.jpg">
+                    <img src="../photos/jpg.2x1/DZ0_5161-Enhanced-NR.jpg" alt="a family of flowers" data-fullscreen="../photos/jpg/DZ0_5161-Enhanced-NR.jpg">
+                </div>
+                <!-- Carousel navigation buttons (previous and next) -->
+                <button class="carousel-button left" id="prevButton">&lt;</button>
+                <button class="carousel-button right" id="nextButton">&gt;</button>
+            </div>
+    
+            <!-- Album Description Section -->
+            <div class="album-description">
+                <p>
+                    <strong>Album Description:</strong> The Leaf at Assiniboine Park is an indoor habitat for multiple plants, biomes, and even butterflies. It's a great place to go, sit back, relax, and get a cup of coffee from their craft kitchen.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Fullscreen image view that appears when an image is clicked -->
+        <div class="fullscreen" id="fullscreenView">
+            <img id="fullscreenImage" src="" alt="Full-size Image">
+            <div>
+                <!-- Back button to exit fullscreen view -->
+                <button class="back-button" id="backButton">Back</button>
+                <!-- Download button to save the image -->
+                <a id="downloadButton" class="back-button" href="#" download>Download</a>
+            </div>
+        </div>
+<!--java script made by chat gpt
+the java script is here to make it so the the images i wanna feature can be in a carrusel format-->
+        <script>
+            const carouselImages = document.querySelector('.carousel-images');
+            const images = document.querySelectorAll('.carousel-images img');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            const fullscreenView = document.getElementById('fullscreenView');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            const backButton = document.getElementById('backButton');
+            const downloadButton = document.getElementById('downloadButton');
+
+            let index = 0;
+
+            // Function to show the current image based on the index
+            function showImage() {
+                const translateX = `-${index * 100}%`;
+                carouselImages.style.transform = `translateX(${translateX})`;
+            }
+
+            // Navigate to the next image in the carousel
+            nextButton.addEventListener('click', () => {
+                index = (index + 1) % images.length;
+                showImage();
+            });
+
+            // Navigate to the previous image in the carousel
+            prevButton.addEventListener('click', () => {
+                index = (index - 1 + images.length) % images.length;
+                showImage();
+            });
+
+            // Show fullscreen image when an image is clicked
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    const fullscreenSrc = image.getAttribute('data-fullscreen');
+                    fullscreenImage.src = fullscreenSrc;
+                    downloadButton.href = fullscreenSrc; // Set the download link
+                    downloadButton.setAttribute('download', fullscreenSrc.split('/').pop()); // Extract filename for download
+                    fullscreenView.style.display = 'flex';
+                });
+            });
+
+            // Hide fullscreen view on back button click
+            backButton.addEventListener('click', () => {
+                fullscreenView.style.display = 'none';
+            });
+        </script>
+    </main>
+</body>
+</html>

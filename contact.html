@@ -1,0 +1,70 @@
+<!--
+    Page description: 
+    This is the Contact page for OUT_OF_FOCUS. It includes a contact form for users to reach out with inquiries, along with a Google Maps embed showing the location of Pembina Trails Collegiate. The page is styled for easy navigation and communication.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Photography by Ethan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="photos/logos for photos.png" alt="OUT OF FOCUS logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>I'd love to hear from you! Please feel free to reach out with any questions or inquiries about my photography services.</p>
+
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <form action="#" method="POST" class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+            
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+            
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message" rows="5" cols="5"></textarea>
+            
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            
+                <!-- Map Section -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.3423396145863!2d-97.18747472309728!3d49.798431334095376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea75d46b3d8811%3A0x4633f0116d026344!2sPembina%20Trails%20Collegiate!5e0!3m2!1sen!2sca!4v1737163323381!5m2!1sen!2sca" 
+                        width="600" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Photography by OUT_OF_FOCUS. All rights reserved.</p>
+    </footer>
+</body>
+</html>

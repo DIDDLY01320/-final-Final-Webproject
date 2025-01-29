@@ -1,0 +1,203 @@
+<!--
+    Page description: 
+    This page showcases the photography and videography services offered by OUT_OF_FOCUS. It includes detailed pricing for various types of photo and video shoots.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background Image */
+        body {
+            text-align: center;
+            background-image: url('photos/jpg/birds hill star trails 3-1.jpg'); /* Replace with your actual image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white; /* Adjust text color for readability */
+        }
+
+        .services-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7); /* Add a slight background to improve text readability */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+        }
+
+        /* Table Container */
+        .table-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto; /* Enables horizontal scrolling on smaller screens */
+            padding: 10px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 800px; /* Fixed width */
+            max-width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="photos/logos for photos.png" alt="OUT OF FOCUS logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Services Section -->
+    <main>
+        <div class="services-page">
+            <h1>Our Services</h1>
+            
+            <!-- Photography Services -->
+            <section class="service-section">
+                <h2>Photography Services</h2>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Weddings</td>
+                            <td>Capture your special day with stunning photos.</td>
+                            <td>$1200</td>
+                        </tr>
+                        <tr>
+                            <td>Portraits</td>
+                            <td>Professional portrait sessions for individuals or groups.</td>
+                            <td>$200</td>
+                        </tr>
+                        <tr>
+                            <td>Events</td>
+                            <td>Preserve memories from birthdays, parties, or corporate events.</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td>Landscapes</td>
+                            <td>Beautiful outdoor shots of scenic locations.</td>
+                            <td>$300</td>
+                        </tr>
+                        <tr>
+                            <td>Product Photography</td>
+                            <td>High-quality product images for businesses.</td>
+                            <td>$150 per item</td>
+                        </tr>
+                        <tr>
+                            <td>Real Estate</td>
+                            <td>Photos that make properties stand out.</td>
+                            <td>$400</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Shoots</td>
+                            <td>Tailored photography sessions to fit your needs.</td>
+                            <td>Contact for pricing</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Videography Services -->
+            <section class="service-section">
+                <h2>Videography Services</h2>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Weddings</td>
+                            <td>Beautifully filmed highlights of your big day.</td>
+                            <td>$2000</td>
+                        </tr>
+                        <tr>
+                            <td>Music Videos</td>
+                            <td>Creative and cinematic videos for your songs.</td>
+                            <td>$1500</td>
+                        </tr>
+                        <tr>
+                            <td>Corporate Events</td>
+                            <td>Professional videos for conferences or meetings.</td>
+                            <td>$1000</td>
+                        </tr>
+                        <tr>
+                            <td>Commercials</td>
+                            <td>High-quality ads tailored to your business.</td>
+                            <td>$3000</td>
+                        </tr>
+                        <tr>
+                            <td>Real Estate</td>
+                            <td>Videos that showcase properties in the best light.</td>
+                            <td>$700</td>
+                        </tr>
+                        <tr>
+                            <td>Social Media Content</td>
+                            <td>Engaging short videos for online platforms.</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Shoots</td>
+                            <td>Unique videography solutions tailored for you.</td>
+                            <td>Contact for pricing</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- YouTube Video Embed -->
+                <div class="video-container">
+                    <iframe 
+                        width="725" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/KWCGwq4LL4c?si=Ja3wHW4hb5UqzH51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>" 
+                        frameborder="0" 
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Photography by OUT_OF_FOCUS. All rights reserved.</p>
+    </footer>
+</body>
+</html>

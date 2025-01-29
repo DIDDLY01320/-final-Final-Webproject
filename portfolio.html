@@ -1,0 +1,239 @@
+<!--
+    Page description: 
+    this is the portfolia page for OUT_OF_FOCUS. It showcases the different albums of photos that we have taken for customers.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Body styling with background image */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('photos/jpg/birds\ hill\ star\ trails\ 3-1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Container for the photo gallery */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Main heading styling */
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        /* Grid layout for the photo albums */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Album styling */
+        .album {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Image styling within each album */
+        .album img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Container for hover effects */
+        .album .mini-cube {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hover content styling */
+        .album .hover-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Hover effect for album */
+        .album:hover .hover-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Styling for album text */
+        .album p{
+            width: 80%;
+        }
+
+        /* Album hover effect */
+        .album:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hover content heading styling */
+        .hover-content h3 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        /* Hover content paragraph styling */
+        .hover-content p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <!-- Logo Link -->
+                <a href="index.html"><img src="photos/logos for photos.png" alt="OUT OF FOCUS logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <!-- Navigation Links -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery-container">
+            <h1>Photography Portfolio</h1>
+            <div class="album-grid">
+                <!-- Album 1 -->
+                <a href="albums/cars.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2539-1.jpg" alt="Album 1"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2577-1.jpg" alt="Album 1"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2583-1.jpg" alt="Album 1"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2601-1.jpg" alt="Album 1"></div>
+                    <div class="hover-content">
+                        <h3>Cars</h3>
+                        <p>This album showcases beautiful Cars.</p>
+                    </div>
+                </a>
+
+                <!-- Album 2 -->
+                <a href="albums/floral.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4985.jpg" alt="Album 2"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_5005-Enhanced-NR.jpg" alt="Album 2"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_5056-Enhanced-NR.jpg" alt="Album 2"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_5161-Enhanced-NR.jpg" alt="Album 2"></div>
+                    <div class="hover-content">
+                        <h3>Floral</h3>
+                        <p>This album captures the beauty of nature.</p>
+                    </div>
+                </a>
+
+                <!-- Album 3 -->
+                <a href="albums/fanF.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/TATA1403-Enhanced-NR-Edit-1-standard.jpg" alt="Album 3"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/TATA2382-Enhanced-NR-1.jpg" alt="Album 3"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/birds hill star trails 3-1.jpg" alt="Album 3"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_2005-Enhanced-NR-Edit-1.jpg" alt="Album 3"></div>
+                    <div class="hover-content">
+                        <h3>Fan Favorites</h3>
+                        <p>This album is all about the favorites.</p>
+                    </div>
+                </a>
+
+                <!-- Album 4 -->
+                <a href="albums/THc.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4341-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4418-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4498-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4332-Enhanced-NR.jpg" alt="Album 4"></div>
+                    <div class="hover-content">
+                        <h3>UCP AGM 2024</h3>
+                        <p>This album is all about the HULAGENS UCP AGM 2024 concert.</p>
+                    </div>
+                </a>
+
+                <!-- Album 5 -->
+                <a href="albums/THbp.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_3956-Enhanced-NR-Edit.jpg" alt="Album 5"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4008-Enhanced-NR-Edit.jpg" alt="Album 5"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4056-Enhanced-NR.jpg" alt="Album 5"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4105-Enhanced-NR-Edit.jpg" alt="Album 5"></div>
+                    <div class="hover-content">
+                        <h3>Band Practice</h3>
+                        <p>The HULAGENS band practice</p>
+                    </div>
+                </a>
+
+                <!-- Album 6 -->
+                <a href="albums/djD.html" class="album">
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4944-Edit.jpg" alt="Album 6"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4854.jpg" alt="Album 6"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4882-Edit-2.jpg" alt="Album 6"></div>
+                    <div class="mini-cube"><img src="photos/jpg.crpd/DZ0_4891.jpg" alt="Album 6"></div>
+                    <div class="hover-content">
+                        <h3>DJ DIMON</h3>
+                        <p>All about DJ DIMON</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer Information -->
+        <p>&copy; 2025 Photography by OUT_OF_FOCUS. All rights reserved.</p>
+    </footer>
+</body>
+</html>
